@@ -82,12 +82,23 @@ The `req` object has several useful properties that give access to client data:
 ## 🔹 Summary
 
 ✅ **Request** → Data sent from client to server
+
+
+
 ✅ **Object** → Contains details of the client request (`req`)
+
+
+
 ✅ **Methods** → Define the action (GET, POST, PUT, PATCH, DELETE)
+
+
+
+
 ✅ **Properties** → Help access data like URL, path, query, and body
 
 💡 *In short:*
 
 > The request tells the server **what the client wants** and provides all the necessary information to process it.
+
 
 
