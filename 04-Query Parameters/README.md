@@ -56,21 +56,23 @@ Yahan:
 Sirf ek key-value pair hota hai.
 Example: `/search?keyword=apple` → “apple” search karega.
 
----
+
 
 ### 2. **Multiple Query Parameters**
 
 Jab ek se zyada parameters bhejne hoon.
 Example: `/products?category=shoes&sort=asc&page=3`
 
----
+
+
 
 ### 3. **Default Values**
 
 Agar query parameter na diya jaye to ek **default value** lagayi jati hai.
 Example: agar `/items` me `sort` na ho to default `"asc"` lagta hai.
 
----
+
+
 
 ### 4. **Optional Query Parameters**
 
@@ -81,21 +83,28 @@ Example:
 * `/blogs?author=John` → sirf John ke blogs
 * `/blogs` → sab blogs
 
----
+
+
+
 
 ### 5. **Pagination and Filtering**
 
 Large data ko pages mei divide karne ke liye.
 Example: `/users?page=2&limit=5` → page 2, har page pe 5 users.
 
----
+
+
+
 
 ### 6. **Sorting**
 
 Data ko sort karne ke liye (price, name, date etc).
 Example: `/products/sort?sortBy=price&order=desc`
 
----
+
+
+
+
 
 ### 7. **Search Feature**
 
@@ -103,21 +112,29 @@ Agar `keyword` diya gaya ho to search result milta hai.
 Agar na ho to error ya message milta hai.
 Example: `/search?keyword=AI`
 
----
+
+
+
+
 
 ### 8. **Validation of Query Parameters**
 
 Query values check karna ke wo sahi format mei hain ya nahi.
 Example: `price` number hai ya nahi, `category` khali to nahi.
 
----
+
+
+
+
 
 ### 9. **Security Concerns (Query Injection)**
 
 Kabhi kabhi users malicious data bhej dete hain (XSS attacks).
 Isliye input ko **sanitize** karna zaroori hai (like `xss` library se).
 
----
+
+
+
 
 ### 10. **Blogs Example (Filtering and Limiting)**
 
@@ -138,4 +155,5 @@ Isliye input ko **sanitize** karna zaroori hai (like `xss` library se).
 | **Sorting**         | Order set karna            | `/sort?by=price&order=desc`        |
 | **Validation**      | Input check karna          | `/filter?category=shoes&price=500` |
 | **Security**        | Safe rakhna input ko       | `/secure?input=<script>`           |
+
 
