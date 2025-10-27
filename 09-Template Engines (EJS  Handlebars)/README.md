@@ -1,107 +1,87 @@
-Perfect Code Queen 👑💫
-Here’s your **README for “Template Engines (EJS in Express.js)”** — written *only with explanations* (no code, no folder structure) — everything crystal clear and easy 🌸
-
----
-
-# 📘 Template Engines (EJS) in Express.js
+# 📘 Template Engines (Handlebars / hbs) in Express.js
 
 ## 🔹 What is a Template Engine?
 
-A **Template Engine** is a tool used to **generate HTML pages dynamically**.
-It allows you to **insert variables and logic directly inside HTML**, so the page changes based on the data sent from the server.
+**Template Engine** ek tool hai jo **dynamic HTML pages generate karne** ke liye use hota hai.
+Ye aapko HTML ke andar **variables aur logic insert karne** deta hai, taki page server se aayi hui data ke hisaab se change ho.
 
-🩵 *In simple words:*
-Template engine ka kaam hota hai HTML ke andar data automatically daalna (dynamic pages banana).
+🩵 *Simple words:*
+Handlebars HTML ke andar data automatically daalne ka tareeqa hai (dynamic pages create karna).
 
----
+
 
 ## 🔹 Why We Use Template Engines
 
-Normally HTML is **static** — it doesn’t change unless we edit it.
-But with a template engine, we can send **dynamic data** (like user name, product details, etc.) from backend to frontend easily.
+Normal HTML **static hota hai** — ye tabhi change hota hai jab hum manually file edit karein.
+Template engine se hum backend se frontend ko **dynamic data** easily bhej sakte hain.
 
-For example, if a user logs in, the page can say:
-**“Welcome, Code Queen 👑!”** — without writing a new HTML file every time.
+Example: User login kare → page bole:
+**“Welcome, Code Queen 👑!”** — bina har bar nayi HTML file banaye.
 
----
 
-## 🔹 What is EJS?
+## 🔹 What is Handlebars (hbs)?
 
-**EJS (Embedded JavaScript)** is one of the most popular template engines used with Express.js.
-It allows you to **write JavaScript inside HTML** using special tags.
+**Handlebars (hbs)** ek popular template engine hai Express.js ke saath.
+Ye HTML ke andar **mustache-style syntax `{{ }}`** use karke data aur logic allow karta hai.
 
 🩵 *In short:*
-EJS means “HTML + JavaScript together.”
+Handlebars ka matlab hai “HTML + easy templating syntax for JS data”.
 
----
 
-## 🔹 How EJS Works
 
-When you set EJS as the template engine, Express automatically looks for `.ejs` files.
-Then it replaces your variables and logic with real data before sending the page to the browser.
+## 🔹 How Handlebars Works
 
-🪄 Example of what happens:
+1. Express server data bhejta hai template file (hbs) ko.
+2. Handlebars engine data ko HTML ke saath merge karta hai.
+3. Browser ko final HTML page milta hai jo ready aur dynamic hota hai.
+
+🪄 Example:
 
 * Server sends `{ name: "Code Queen" }`
-* Template has `<%= name %>`
+* Template has `{{name}}`
 * Browser shows → “Welcome, Code Queen 👑!”
 
----
 
-## 🔹 EJS Tags (Used Inside HTML)
+## 🔹 Handlebars Tags (Used Inside HTML)
 
-| Type        | Syntax   | Purpose                                           |
-| ----------- | -------- | ------------------------------------------------- |
-| Output Tag  | `<%= %>` | Used to display variable data                     |
-| Logic Tag   | `<% %>`  | Used for conditions or loops                      |
-| Comment Tag | `<%# %>` | Used for writing comments (not visible in output) |
+| Type     | Syntax            | Purpose                           |
+| -------- | ----------------- | --------------------------------- |
+| Variable | `{{}}`            | Display variable data             |
+| Block    | `{{#if}} {{/if}}` | Add conditions or loops           |
+| Comment  | `{{!-- --}}`      | Write hidden comments (not shown) |
 
 Example:
 
-* `<%= name %>` → prints data
-* `<% if(name) { %>` → adds logic
-* `<%# comment %>` → hidden note for developers
+* `{{name}}` → prints data
+* `{{#if isLoggedIn}}` → adds logic
+* `{{!-- comment --}}` → hidden note
 
----
 
-## 🔹 What Happens Behind the Scenes
 
-1. **Express server** sends data to a template file (EJS).
-2. **EJS engine** merges that data with HTML.
-3. **Browser** receives the final, ready-made HTML page.
+## 🔹 Installation of Handlebars
 
-This process repeats every time new data is sent — so your pages always stay up-to-date and dynamic.
+1. Install via npm:
+   `npm install hbs`
+2. Tell Express to use hbs: `app.set('view engine', 'hbs')`
+3. Create a `views` folder for your template files.
 
----
 
-## 🔹 Installation of EJS
 
-To use EJS, we first install it using Node Package Manager (npm).
-Command:
-`npm install ejs`
+## 🔹 Benefits of Using Handlebars
 
-After that, we tell Express to use EJS as its template engine using the `app.set()` method.
+✅ Simple syntax (mustache style)
+✅ Easy to integrate with Express.js
+✅ Dynamic HTML pages without complex JS code
+✅ Supports conditions, loops, and partials
+✅ Keeps templates clean and reusable
 
----
-
-## 🔹 Benefits of Using EJS
-
-✅ Easy to learn and write
-✅ Allows JavaScript directly in HTML
-✅ Makes web pages dynamic
-✅ Works perfectly with Express.js
-✅ Great for displaying real-time or user-based content
-
----
 
 ## 🔹 Summary
 
-* **Template Engine:** Creates dynamic HTML pages using backend data
-* **EJS:** Stands for *Embedded JavaScript*
-* **Main Purpose:** Mix HTML + JavaScript for dynamic content
-* **Tags:** `<%= %>` for data, `<% %>` for logic
-* **Result:** Clean, reusable, and flexible web pages
+* **Template Engine:** Dynamic HTML using backend data
+* **Handlebars / hbs:** Easy-to-use templating with `{{ }}` syntax
+* **Main Purpose:** Insert data + logic inside HTML
+* **Tags:** `{{}}` for data, `{{#if}}` / `{{#each}}` for logic
+* **Result:** Clean, reusable, and dynamic web pages
 
----
 
-Would you like me to create the **same style README** for **Handlebars (hbs)** next, so you can compare both engines easily?
