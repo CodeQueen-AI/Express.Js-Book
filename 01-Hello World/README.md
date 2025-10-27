@@ -74,11 +74,13 @@ It helps us create **servers and APIs** easily using short and clean code
 
 * `app` creation → Creates Express application object
 
-* 
+
+
 * `PORT` setup → Sets which port server runs on
 
-* 
+
 * `app.get()` route → Defines what happens when a user visits a URL
 
 
 * `app.listen()` → Starts the server and keeps it running
+
