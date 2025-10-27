@@ -2,86 +2,84 @@
 
 ## 🔹 What Is Error Handling?
 
-**Error handling** means catching and managing errors that happen in your Express app — instead of letting your app crash.
+**Error handling** ka matlab hai ke **Express app mein hone wali errors ko catch aur manage karna**, taki app crash na ho.
 
-In simple words:
+Simple words mein:
 
-> It helps your server **respond gracefully** when something goes wrong.
+> Ye server ko help karta hai ke jab kuch galat ho, to wo **gracefully respond kare**
 
----
+
+
 
 ## 🔹 Why Is Error Handling Important?
 
-Because in real applications, many things can fail —
-like invalid routes, missing data, or server bugs.
+Real applications mein bohot si cheezein fail ho sakti hain —
+jaise invalid routes, missing data, ya server bugs.
 
-Without proper handling, users see ugly messages or your app may stop working.
-With error handling, users get **clear and friendly error messages**.
+Agar proper handling na ho, to users ko ugly messages dikhte hain ya app stop ho jati hai.
+Error handling se users ko **clear aur friendly messages** milte hain.
 
----
+
+
+
 
 ## 🔹 How It Works (Step-by-Step)
 
-1. The client sends a request.
-2. Express checks routes one by one.
-3. If something goes wrong, an **error is created**.
-4. The error is passed to the **error-handling middleware** using `next(err)`.
-5. Express displays a clean message to the user.
+1. Client request bhejta hai
+2. Express routes ko check karta hai ek ek karke
+3. Agar kuch galat hota hai, **error create hoti hai**
+4. Error ko **error-handling middleware** ko `next(err)` se pass kiya jata hai
+5. Express user ko **clean aur readable message** show karta hai
 
----
+
+
+
+
 
 ## 🔹 Key Parts of Error Handling
 
 ### 1️⃣ Normal Route
 
-These are your regular routes, like `/`, `/home`, or `/api`.
-They work fine until an unexpected issue occurs.
+Ye aapke regular routes hote hain, jaise `/`, `/home`, `/api`.
+Ye normally kaam karte hain jab tak unexpected issue na ho.
 
----
+
+
+
 
 ### 2️⃣ Custom Error Route
 
-If something fails, you can **manually create an error** using:
+Agar kuch fail hota hai, aap **manually error create** kar sakte hain:
 
-```js
-const err = new Error("Custom message");
-err.status = 500;
-next(err);
-```
+> `next(err)` ke zariye error-handling middleware ko bhejna
 
-This passes the error to the error-handling middleware.
+Ye ensure karta hai ke error clean tareeke se handle ho.
 
----
+
 
 ### 3️⃣ 404 Handler (Page Not Found)
 
-When a user visits a route that doesn’t exist,
-Express uses a **404 middleware**:
+Jab user aise route par jata hai jo exist nahi karta:
 
-> "Page Not Found" errors are handled here.
+> "Page Not Found" errors yahan handle hoti hain
 
-It ensures your app responds nicely even for invalid URLs.
+Ye ensure karta hai ke invalid URLs par bhi app **proper response** de.
 
----
+
 
 ### 4️⃣ Error-Handling Middleware
 
-This special middleware **catches all errors** in the app.
-It looks like this:
+Ye special middleware **sab errors ko catch karta hai**.
+Iska structure kuch is tarah hota hai:
 
-```js
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.send({ status: err.status, message: err.message });
-});
-```
+* 4 parameters hote hain: `(err, req, res, next)`
+* `err` → error details rakhta hai
+* `res.status()` → HTTP status code set karta hai
+* `res.send()` → error message client ko bhejta hai
 
-* It always has **4 parameters** — `(err, req, res, next)`
-* `err` → contains the error details
-* `res.status()` → sets the HTTP status code
-* `res.send()` → sends the error message to the client
+Ye middleware app ke har unexpected problem ko manage karta hai.
 
----
+
 
 ## 🔹 Common Error Status Codes
 
@@ -93,16 +91,14 @@ app.use((err, req, res, next) => {
 | 404         | Not Found             |
 | 500         | Internal Server Error |
 
----
 
 ## 🔹 Summary
 
-* **Error handling** prevents your app from crashing.
-* **404 Middleware** catches missing routes.
-* **Error Middleware** manages unexpected problems.
-* Always use `next(err)` to pass errors forward.
+* **Error handling** app ko crash hone se bachata hai
+* **404 Middleware** missing routes handle karta hai
+* **Error Middleware** unexpected problems manage karta hai
+* Hamesha `next(err)` use karein errors forward karne ke liye
 
 ✨ In short:
 
-> “Error handling in Express makes your app smart, stable, and user-friendly — even when something breaks.” 💪💫
-
+> “Express mein error handling aapki app ko smart, stable aur user-friendly banata hai — chahe kuch bhi galat ho jaye.” 💪💫
