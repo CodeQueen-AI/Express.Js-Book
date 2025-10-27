@@ -1,10 +1,6 @@
-Bilkul Code Queen 👑 — yahaan **Query Parameters** ka **README** maine simple Urdu explanation ke sath likha hai, lekin type English letters mei kiya hai (Roman Urdu) taake aapko samajhna easy lage 💪
-
----
-
 # 📘 Query Parameters in Express.js
 
-## 🧩 Query Parameters kya hotay hain?
+## 🧩 What are Query Parameters?
 
 Query parameters wo **key-value pairs** hotay hain jo URL ke end mei **question mark (?)** ke baad likhe jatay hain.
 Ye server ko **extra information** dene ke liye use hotay hain **without changing the route**.
@@ -17,9 +13,10 @@ Yahan:
 * `/search` → Route
 * `?keyword=apple` → Query parameter (`keyword` key hai, `apple` value hai)
 
----
 
-## 💡 Query Parameters kyu use kartay hain?
+
+
+## 💡 Why We Use Query Parameters
 
 Hum query parameters ko use kartay hain taake hum:
 
@@ -29,7 +26,9 @@ Hum query parameters ko use kartay hain taake hum:
 4. **Optional data** bhejna ho bina route badlay
 5. **Dynamic requests** handle kar saken client se
 
----
+
+
+
 
 ## 🌐 URL Structure
 
@@ -47,7 +46,8 @@ Yahan:
 * `category`, `sort`, `page` → keys hain
 * `shoes`, `price`, `2` → unki values hain
 
----
+
+
 
 ## 🔍 Important Concepts
 
@@ -83,7 +83,7 @@ Example:
 
 ---
 
-### 5. **Pagination & Filtering**
+### 5. **Pagination and Filtering**
 
 Large data ko pages mei divide karne ke liye.
 Example: `/users?page=2&limit=5` → page 2, har page pe 5 users.
@@ -105,7 +105,7 @@ Example: `/search?keyword=AI`
 
 ---
 
-### 8. **Validation of Query Params**
+### 8. **Validation of Query Parameters**
 
 Query values check karna ke wo sahi format mei hain ya nahi.
 Example: `price` number hai ya nahi, `category` khali to nahi.
@@ -119,13 +119,12 @@ Isliye input ko **sanitize** karna zaroori hai (like `xss` library se).
 
 ---
 
-### 10. **Blogs Example (Filtering + Limiting)**
+### 10. **Blogs Example (Filtering and Limiting)**
 
 * `/blogs?author=Alice` → sirf Alice ke blogs
 * `/blogs?limit=2` → sirf pehle 2 blogs
 * `/blogs?author=Alice&limit=1` → sirf Alice ka pehla blog
 
----
 
 ## ⚙️ Summary Table
 
@@ -140,6 +139,3 @@ Isliye input ko **sanitize** karna zaroori hai (like `xss` library se).
 | **Validation**      | Input check karna          | `/filter?category=shoes&price=500` |
 | **Security**        | Safe rakhna input ko       | `/secure?input=<script>`           |
 
----
-
-Kya chaho ke mai ye file **GitHub style README** ke format mei bana dun (headings, emojis, markdown structure ke sath) taake aap seedha upload kar sako?
