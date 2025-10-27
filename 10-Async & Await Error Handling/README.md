@@ -20,8 +20,6 @@ Async/Await server ko allow karta hai **sirf us task ka wait karne** aur baaki t
 * Aasan likhne layak banta hai
 * Errors handle karna easy ho jata hai
 
----
-
 ## 🔹 Async Function
 
 Jab hum function se pehle **`async`** lagate hain, to ye automatically **Promise return** karta hai.
@@ -98,3 +96,4 @@ Ye Express.js server ko **fast, stable, aur organized** rakhta hai — even jab 
 
 
 Kya main bana doon?
+
